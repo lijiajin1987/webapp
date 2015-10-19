@@ -1,0 +1,115 @@
+﻿<html ng-app="webapp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+    <title>十万个为什么</title>
+    <link href="/Content/css/ionic.min.css" rel="stylesheet" />
+    <link href="/Content/css/webapp.css" rel="stylesheet" />
+    <script src="/Content/js/ionic.bundle.min.js"></script>
+    <script type="text/javascript">
+        var app=angular.module('webapp', ['ionic'])
+        //function MainCtrl($scope, $ionicSideMenuDelegate) {
+        //    $scope.toggleLeftSideMenu = function () {
+        //        $ionicSideMenuDelegate.toggleLeft();
+        //    };
+        //}
+
+         app.controller('WhyCtrl', function ($scope) {
+                $scope.contacts = [
+                    { name: '内科' },
+                    { name: '外科' },
+                    { name: '肾内科' },
+                    { name: '消化内科' },
+                    { name: '神经内科' },
+                    { name: '呼吸内科' },
+                    { name: '血液科' },
+                    { name: '骨科' },
+                    { name: '儿科' },
+                    { name: '妇产科' },
+                    { name: '妇产科2' },
+                    { name: '妇产科3' },
+                    { name: '妇产科4' },
+                    { name: '妇产科5' },
+                    { name: '妇产科6' },
+                    { name: '妇产科7' },
+                    { name: '妇产科8' },
+                    { name: '妇产科9' },
+                    { name: '妇产科10' },
+                    { name: '妇产科11' },
+                    { name: '妇产科12' },
+                    { name: '脑科' },
+                    { name: '' }
+                ];
+            });
+        app.controller('MainCtrl',function($scope, $ionicSideMenuDelegate){
+            $scope.toggleLeftSideMenu = function () {
+                $ionicSideMenuDelegate.toggleLeft();
+            };
+            $scope.changbackground = function () {
+                $scope.isclick = !$scope.isclick
+            };
+        })
+    </script>
+</head>
+<!--  
+<body ng-controller="WhyCtrl">
+    <ion-side-menus>
+        <ion-side-menu-content>
+        内容<button ng-click="toggleLeftSideMenu()">打开做菜单</button>
+        </ion-side-menu-content>
+        <ion-side-menu side="left">2</ion-side-menu>
+    </ion-side-menus>
+    <script type="text/javascript">
+        angular.module('webapp', ['ionic'])
+        .controller('WhyCtrl', function ($scope) {
+            $scope.contacts = [
+                { name: '内科' },
+                { name: '外科' },
+                { name: '肾内科' },
+                { name: '消化内科' },
+                { name: '神经内科' },
+                { name: '呼吸内科' },
+                { name: '血液科' },
+                { name: '骨科' },
+                { name: '儿科' },
+                { name: '妇产科' },
+                { name: '妇产科2' },
+                { name: '妇产科3' },
+                { name: '妇产科4' },
+                { name: '妇产科5' },
+                { name: '妇产科6' },
+                { name: '妇产科7' },
+                { name: '妇产科8' },
+                { name: '妇产科9' },
+                { name: '妇产科10' },
+                { name: '妇产科11' },
+                { name: '妇产科12' },
+                { name: '脑科' },
+                { name: '' }
+            ];
+        });
+
+        function WhyCtrl($scope, $ionicSideMenuDelegate) {
+            $scope.toggleLeftSideMenu = function () {
+                $ionicSideMenuDelegate.toggleLeft();
+            };
+        };
+    </script>
+</body>-->
+<body ng-controller="MainCtrl">
+    <div ng-controller="WhyCtrl"></div>
+    <ion-side-menus>
+        <ion-side-menu-content ng-class="{true:'whylist-select',false:'whylist-noselect'}[isclick]">
+            内容!
+            <button ng-click="toggleLeftSideMenu()">
+                切换左侧侧栏菜单
+            </button>
+            <button ng-click="changbackground()">改变背景颜色</button>
+        </ion-side-menu-content>
+        <ion-side-menu side="left">
+            左侧菜单!
+            <ion-side-menu>
+    </ion-side-menus>
+</body>
+</html>
