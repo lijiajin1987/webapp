@@ -1,115 +1,94 @@
-﻿<html ng-app="webapp">
+﻿<html ng-app="QuestionListApp">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-
-    <title>十万个为什么</title>
+    <title>健康十万个为什么</title>
     <link href="/Content/css/ionic.min.css" rel="stylesheet" />
     <link href="/Content/css/webapp.css" rel="stylesheet" />
     <script src="/Content/js/ionic.bundle.min.js"></script>
     <script type="text/javascript">
-        var app=angular.module('webapp', ['ionic'])
-        //function MainCtrl($scope, $ionicSideMenuDelegate) {
-        //    $scope.toggleLeftSideMenu = function () {
-        //        $ionicSideMenuDelegate.toggleLeft();
-        //    };
-        //}
-
-         app.controller('WhyCtrl', function ($scope) {
-                $scope.contacts = [
-                    { name: '内科' },
-                    { name: '外科' },
-                    { name: '肾内科' },
-                    { name: '消化内科' },
-                    { name: '神经内科' },
-                    { name: '呼吸内科' },
-                    { name: '血液科' },
-                    { name: '骨科' },
-                    { name: '儿科' },
-                    { name: '妇产科' },
-                    { name: '妇产科2' },
-                    { name: '妇产科3' },
-                    { name: '妇产科4' },
-                    { name: '妇产科5' },
-                    { name: '妇产科6' },
-                    { name: '妇产科7' },
-                    { name: '妇产科8' },
-                    { name: '妇产科9' },
-                    { name: '妇产科10' },
-                    { name: '妇产科11' },
-                    { name: '妇产科12' },
-                    { name: '脑科' },
-                    { name: '' }
-                ];
-            });
-        app.controller('MainCtrl',function($scope, $ionicSideMenuDelegate){
-            $scope.toggleLeftSideMenu = function () {
-                $ionicSideMenuDelegate.toggleLeft();
-            };
-            $scope.changbackground = function () {
-                $scope.isclick = !$scope.isclick
-            };
-        })
+        var app = angular.module('QuestionListApp', ['ionic']);
+        app.controller("ListCtrl", function ($scope) {
+            var Doctor = "审兰阔";
+            var Level = "主治医师";
+            var RecoveryTime = 0;
+            var question = "我血压低经常出现头晕,有什么药吃呢?";
+            var answer = "吃屎!";
+            var questionlist = {};
+            var dataquestion;
+            $scope.questionlistjson = [];
+            for (var i = 0; i < 10; i++) {
+                dataquestion = {
+                    Doctor: Doctor + i,
+                    Level: Level + i,
+                    RecoveryTime: i,
+                    question: question + i,
+                    answer: answer + "!",
+                };
+                $scope.questionlistjson[i] = dataquestion;
+            }
+        });
     </script>
 </head>
-<!--  
-<body ng-controller="WhyCtrl">
-    <ion-side-menus>
-        <ion-side-menu-content>
-        内容<button ng-click="toggleLeftSideMenu()">打开做菜单</button>
-        </ion-side-menu-content>
-        <ion-side-menu side="left">2</ion-side-menu>
-    </ion-side-menus>
-    <script type="text/javascript">
-        angular.module('webapp', ['ionic'])
-        .controller('WhyCtrl', function ($scope) {
-            $scope.contacts = [
-                { name: '内科' },
-                { name: '外科' },
-                { name: '肾内科' },
-                { name: '消化内科' },
-                { name: '神经内科' },
-                { name: '呼吸内科' },
-                { name: '血液科' },
-                { name: '骨科' },
-                { name: '儿科' },
-                { name: '妇产科' },
-                { name: '妇产科2' },
-                { name: '妇产科3' },
-                { name: '妇产科4' },
-                { name: '妇产科5' },
-                { name: '妇产科6' },
-                { name: '妇产科7' },
-                { name: '妇产科8' },
-                { name: '妇产科9' },
-                { name: '妇产科10' },
-                { name: '妇产科11' },
-                { name: '妇产科12' },
-                { name: '脑科' },
-                { name: '' }
-            ];
-        });
-
-        function WhyCtrl($scope, $ionicSideMenuDelegate) {
-            $scope.toggleLeftSideMenu = function () {
-                $ionicSideMenuDelegate.toggleLeft();
-            };
-        };
-    </script>
-</body>-->
-<body ng-controller="MainCtrl">
-    <div ng-controller="WhyCtrl"></div>
-    <ion-side-menus>
-        <ion-side-menu-content ng-class="{true:'whylist-select',false:'whylist-noselect'}[isclick]">
-            内容!
-            <button ng-click="toggleLeftSideMenu()">
-                切换左侧侧栏菜单
-            </button>
-            <button ng-click="changbackground()">改变背景颜色</button>
-        </ion-side-menu-content>
-        <ion-side-menu side="left">
-            左侧菜单!
-            <ion-side-menu>
-    </ion-side-menus>
+<body ng-controller="ListCtrl">
+    <ion-header-bar class="bar-green">
+        <button class="button icon ion-ios-arrow-left"></button>
+        <h1 class="title">健康十万个为什么</h1>
+    </ion-header-bar>
+    <ion-content scroll="false">
+        <div class="bar  bar-subheader-green item-input-inset">
+            <label class="item-input-wrapper">
+                <i class="icon ion-ios-search placeholder-icon"></i>
+                <input type="text" placeholder="搜索" />
+            </label>
+            <button class="button button-energized">确定</button>
+        </div>
+        <div class="bar  item-input-inset">
+            <h1 class="title" style="color:#8BC34A">神经内科&nbsp;&nbsp;&nbsp;<i class="icon icon-right ion-ios-arrow-up"></i></h1>
+        </div>
+        <div class="bar  item-input-inset" style="background-color: #eeeeee;">
+            <div class="button-bar  button-small">
+                <a class="button whybuttonleft whybuttonselect">最新回复</a>
+                <a class="button whybuttonright whybuttonNoselect">专家解答</a>
+            </div>
+        </div>
+        <ion-nav-view>
+            <ion-view>
+                <ion-content style="background-color:#eeeeee">
+                    <div class="card-Interlayer " collection-repeat="q in questionlistjson">
+                        <div class="card card-margin">
+                            <div class="item item-text-wrap">
+                                <a class="item item-avatar-right itemQuestion" href="#">
+                                    <img src="/img/img202_icon_headportrait.png">
+                                    <div class="QuestionBubble-right">
+                                        <p>
+                                            {{q.question}}
+                                        </p>
+                                        <em></em>
+                                    </div>
+                                </a>
+                                <h6 class="title QuestionDoctor">{{q.Doctor}}&nbsp;&nbsp;{{q.Level}} <span>{{q.RecoveryTime}}小时前</span></h6>
+                                <a class="item item-avatar-left itemQuestion" href="#">
+                                    <img src="/img/img202_icon_headportrait.png">
+                                    <div class="QuestionBubble-left">
+                                        <p>{{q.answer}}</p>
+                                        <em></em><span></span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">&nbsp;</div>
+                    <div class="card">&nbsp;</div>
+                    <div class="card">&nbsp;</div>
+                    <div class="card">&nbsp;</div>
+                </ion-content>
+            </ion-view>
+        </ion-nav-view>
+        
+    </ion-content>
+    <div class="bar bar-footer bar-green opacity-footer">
+        <div class="title">我要提问</div>
+    </div>
 </body>
 </html>

@@ -144,6 +144,7 @@
     <Content Include="Global.asax" />
     <Content Include="img\img153.png" />
     <Content Include="img\img154.png" />
+    <Content Include="img\img202_icon_headportrait.png" />
     <Content Include="Scripts\js\angular-ui\angular-ui-router.js" />
     <Content Include="Scripts\js\angular-ui\angular-ui-router.min.js" />
     <Content Include="Scripts\js\angular\angular-animate.js" />
