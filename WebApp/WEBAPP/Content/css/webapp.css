@@ -1,78 +1,209 @@
 ﻿.bar.bar-green {
-border-color: #8bc34a;
-background-color: #8bc34a;
-background-image: linear-gradient(0deg, #8bc34a, #8bc34a 50%, transparent 50%);
-color: #fff; }
-.bar.bar-green .title {
-color: #fff; }
-.bar.bar-green.bar-footer {
- background-image: linear-gradient(180deg, #8bc34a, #8bc34a 50%, transparent 50%); }
-.bar-green .button {
-  border-color: #8bc34a;
-  background-color: #8bc34a;
-  color: #fff; }
-  .bar-green .button:hover {
-    color: #fff;
-    text-decoration: none; }
-  .bar-green .button.active, .bar-green .button.activated {
     border-color: #8bc34a;
     background-color: #8bc34a;
-    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1); }
-  .bar-green .button.button-clear {
-    border-color: transparent;
-    background: none;
-    box-shadow: none;
+    background-image: linear-gradient(0deg, #8bc34a, #8bc34a 50%, transparent 50%);
     color: #fff;
-    font-size: 17px; }
-  .bar-green .button.button-icon {
-    border-color: transparent;
-    background: none; }
-  .bar.bar-subheader-green {
-border-color: #8bc34a;
-background-color: #8bc34a;
-background-image: linear-gradient(0deg, #8bc34a, #8bc34a 50%, transparent 50%);
-color: #fff; }
-.bar.bar-subheader-green .title {
-color: #fff; }
-.bar.bar-subheader-green.bar-footer {
- background-image: linear-gradient(180deg, #8bc34a, #8bc34a 50%, transparent 50%); }
+}
+
+    .bar.bar-green .title {
+        color: #fff;
+    }
+
+    .bar.bar-green.bar-footer {
+        background-image: linear-gradient(180deg, #8bc34a, #8bc34a 50%, transparent 50%);
+    }
+
+.bar-green .button {
+    border-color: #8bc34a;
+    background-color: #8bc34a;
+    color: #fff;
+}
+
+    .bar-green .button:hover {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .bar-green .button.active, .bar-green .button.activated {
+        border-color: #8bc34a;
+        background-color: #8bc34a;
+        box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .bar-green .button.button-clear {
+        border-color: transparent;
+        background: none;
+        box-shadow: none;
+        color: #fff;
+        font-size: 17px;
+    }
+
+    .bar-green .button.button-icon {
+        border-color: transparent;
+        background: none;
+    }
+
+.bar.bar-subheader-green {
+    border-color: #8bc34a;
+    background-color: #8bc34a;
+    background-image: linear-gradient(0deg, #8bc34a, #8bc34a 50%, transparent 50%);
+    color: #fff;
+}
+
+    .bar.bar-subheader-green .title {
+        color: #fff;
+    }
+
+    .bar.bar-subheader-green.bar-footer {
+        background-image: linear-gradient(180deg, #8bc34a, #8bc34a 50%, transparent 50%);
+    }
 
 .whybuttonselect {
-    background-color:#8bc34a;
-    color:#fff;
-    border-color:#8bc34a;
+    background-color: #8bc34a;
+    color: #fff;
+    border-color: #8bc34a;
 }
-.whybuttonselect:hover {
-    background-color:#8bc34a;
-    color:#fff;
-    border-color:#8bc34a;
-}
+
+    .whybuttonselect:hover {
+        background-color: #8bc34a;
+        color: #fff;
+        border-color: #8bc34a;
+    }
+
 .whybuttonNoselect {
-    background-color:#fff;
-    color:#8bc34a;
-    border-color:#8bc34a;
+    background-color: #fff;
+    color: #8bc34a;
+    border-color: #8bc34a;
 }
+
 .button:hover {
-    color:#fff;
+    color: #fff;
 }
+
 .whybuttonNoselect:hover {
-    background-color:#8bc34a;
-    color:#fff;
-    border-color:#8bc34a;
+    background-color: #8bc34a;
+    color: #fff;
+    border-color: #8bc34a;
 }
-.button-bar>.whybuttonright:last-child {
+
+.button-bar > .whybuttonright:last-child {
     border-radius: 0px 5px 5px 0px;
 }
-.button-bar>.whybuttonleft:first-child {
+
+.button-bar > .whybuttonleft:first-child {
     border-radius: 5px 0px 0px 5px;
 }
+
 .whylist-select {
     background-color: #ffffff;
 }
+
 .whylist-noselect {
     background-color: #eeeeee;
 }
+
 .green-font {
-color: #8bc34a; 
+    color: #8bc34a;
+}
+/*这里做气泡问答样式*/
+.QuestionBubble-right {
+    color: #ffffff;
+    padding: 7px 7px 7px 7px;
+    background-color: #b6b6b6;
+    width: 100%;
+    height: 55px;
+    border-radius: 5px;
 }
 
+    .QuestionBubble-right em {
+        display: block;
+        border-width: 10px 10px 10px 25px;
+        position: absolute;
+        right: 35px;
+        top: 18px;
+        border-style: dashed dashed dashed solid;
+        border-color: transparent transparent transparent #b6b6b6;
+        font-size: 0;
+        line-height: 0;
+    }
+
+    .QuestionBubble-right p {
+        color:#ffffff;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+
+    .QuestionBubble-left {
+    color: #727272;
+    padding: 7px;
+    background-color: #ffffff;
+    width: 100%;
+    height: 55px;
+    border-style:solid;
+    border-width:1px;
+    border-radius: 5px;
+    border-color: #6b6b6b;
+}
+
+    .QuestionBubble-left em {
+        display: block;
+        border-width: 5px 12px 5px 5px;
+        position: absolute;
+        left: 43px;
+        top: 22px;
+        border-style:  dashed solid dashed dashed ;
+        border-color:transparent #727272 transparent transparent ;
+        font-size: 0;
+        line-height: 0;
+    }
+     .QuestionBubble-left span {
+        display: block;
+        border-width: 5px 12px 5px 5px;
+        position: absolute;
+        left: 46px;
+        top: 22px;
+        border-style:  dashed solid dashed dashed ;
+        border-color:transparent #ffffff transparent transparent ;
+        font-size: 0;
+        line-height: 0;
+    }
+        .QuestionBubble-left  p {
+        color:#212121;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+
+.QuestionDoctor {
+    color: #727272;
+    font-weight: bold;
+}
+
+    .QuestionDoctor span {
+        color: #6b6b6b;
+        font-size: 5px;
+        font-weight: normal;
+    }
+
+.itemQuestion {
+    border-width: 0px;
+    border-style: none;
+}
+/*气泡样式结束*/
+.item-avatar-right > img:first-child {
+    right:0px;
+}
+.item-avatar-left > img:first-child {
+    left:0px;
+}
+.item-avatar-right {
+    padding-right:60px;
+}
+.item-avatar-left {
+    padding-left:60px;
+}

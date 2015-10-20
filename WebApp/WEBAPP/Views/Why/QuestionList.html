@@ -8,7 +8,26 @@
     <script src="/Content/js/ionic.bundle.min.js"></script>
     <script type="text/javascript">
         var app = angular.module('QuestionListApp', ['ionic']);
-        app.controller("ListCtrl", function ($scope) { });
+        app.controller("ListCtrl", function ($scope) {
+            var Doctor = "审兰阔";
+            var Level = "主治医师";
+            var RecoveryTime = 0;
+            var question = "我血压低经常出现头晕,有什么药吃呢?";
+            var answer = "吃屎!";
+            var questionlist = {};
+            var dataquestion;
+            for (var i = 0; i < 1000; i++) {
+                dataquestion = {
+                    Doctor: Doctor + i,
+                    Level: Level + i,
+                    RecoveryTime: i,
+                    question: question + i,
+                    answer: answer + "!",
+                };
+                questionlist[i] = dataquestion;
+            }
+            $scope.questionlistjson = questionlist;
+        });
     </script>
 </head>
 <body ng-controller="ListCtrl">
@@ -35,22 +54,32 @@
         </div>
         <ion-nav-view>
             <ion-view>
-                <ion-content>
-                    <div class="card">
+                <ion-content style="background-color:#eeeeee">
+                    <div class="card" collection-repeat="q in questionlistjson">
                         <div class="item item-text-wrap">
-                            最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复
+                            <a class="item item-avatar-right itemQuestion" href="#">
+                                <img src="/img/img202_icon_headportrait.png">
+                                <div class="QuestionBubble-right">
+                                    <p>
+                                        {{q.question}}
+                                    </p>
+                                    <em></em>
+                                </div>
+                            </a>
+                            <h6 class="title QuestionDoctor">{{q.Doctor}}&nbsp;&nbsp;{{q.Level}} <span>{{q.RecoveryTime}}小时前</span></h6>
+                            <a class="item item-avatar-left itemQuestion" href="#">
+                                <img src="/img/img202_icon_headportrait.png">
+                                <div class="QuestionBubble-left">
+                                    <p>{{q.answer}}</p>
+                                    <em></em><span></span>
+                                </div>
+                            </a>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="item item-text-wrap">
-                            最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复最新回复
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="item item-text-wrap">
-                            &nbsp;
-                        </div>
-                    </div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
                 </ion-content>
             </ion-view>
         </ion-nav-view>
