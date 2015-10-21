@@ -1,114 +1,36 @@
-﻿<html ng-app="webapp">
+﻿<html ng-app="Askapp">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-
-    <title>健康十万个为什么</title>
+    <title>健康十万个为什么-专家解答</title>
     <link href="/Content/css/ionic.min.css" rel="stylesheet" />
     <link href="/Content/css/webapp.css" rel="stylesheet" />
     <script src="/Content/js/ionic.bundle.min.js"></script>
+    <title>健康十万个为什么-问题详情</title>
     <script type="text/javascript">
-        var app = angular.module('webapp', ['ionic'])
-        app.controller('WhyCtrl', function ($scope) {
-            $scope.contacts = [
-                { name: '内科', id: 1 },
-                { name: '外科', id: 2 },
-                { name: '肾内科', id: 3 },
-                { name: '消化内科', id: 4 },
-                { name: '神经内科', id: 5 },
-                { name: '呼吸内科', id: 6 },
-                { name: '血液科', id: 7 },
-                { name: '骨科', id: 8 },
-                { name: '儿科', id: 9 },
-                { name: '妇产科', id: 10 },
-                { name: '妇产科2', id: 11 },
-                { name: '妇产科3', id: 12 },
-                { name: '妇产科4', id: 13 },
-                { name: '妇产科5', id: 14 },
-                { name: '妇产科6', id: 15 },
-                { name: '妇产科7', id: 16 },
-                { name: '妇产科8', id: 17 },
-                { name: '妇产科9', id: 18 },
-                { name: '妇产科10', id: 19 },
-                { name: '妇产科11', id: 20 },
-                { name: '妇产科12', id: 21 },
-                { name: '脑科', id: 22 },
-                { name: '' }
-            ];
-        });
-        app.controller('KsCtrl', function ($scope, $ionicSideMenuDelegate) {
-            $scope.GetTwo = function (name, id) {
-                $ionicSideMenuDelegate.toggleRight();
-                var kstwo = {};
-                var dataoption;
-                for (var i = 0; i < 30; i++) {
-                    dataoption = { name: name + i, id: i };
-                    kstwo[i] = dataoption;
-                }
-                $scope.kstwojson = kstwo;
-                $scope.kstwoHead = name;
-            }
+        var app = angular.module('Askapp', ['ionic']);
+        app.controller("AskCtrl", function ($scope) {
+            $scope.askitems = [];// [{ name: "3" }, { name: "2" }, { name: "1" }];
+            $scope.askitems = [{ "name": "3" }, { "name": "2" }, { "name": "1" }];
+            $scope.doRefresh = function () {
+                $scope.askitems = [{ name: "1" }, { name: "2" }, { name: "3" }];
+                $scope.$broadcast('scroll.refreshComplete');
+            };
         });
     </script>
 </head>
-<body ng-controller="WhyCtrl">
+<body ng-controller="AskCtrl">
     <ion-header-bar class="bar-green">
         <button class="button icon ion-ios-arrow-left"></button>
-        <h1 class="title">健康十万个为什么</h1>
+        <h1 class="title">审兰阔</h1>
     </ion-header-bar>
-    <ion-content scroll="false">
-        <div class="bar  bar-subheader-green item-input-inset">
-            <label class="item-input-wrapper">
-                <i class="icon ion-ios-search placeholder-icon"></i>
-                <input type="text" placeholder="搜索" />
-            </label>
-            <button class="button button-energized">确定</button>
-        </div>
-        <ion-nav-view>
-            <ion-view>
-                <ion-side-menus ng-controller="KsCtrl">
-                    <!--中间内容-->
-                    <ion-side-menu-content drag-content="false">
-                        <ion-content>
-                            <ion-list>
-                                <ion-item ng-repeat="contact in contacts" href="#/app/contact/{{contact.id}}" ng-click="GetTwo('{{contact.name}}','{{contact.id}}')">
-                                    {{contact.name}}
-                                </ion-item>
-                            </ion-list>
-                        </ion-content>
-                    </ion-side-menu-content>
-                    <!--右侧内容-->
-                    <ion-side-menu side="right">
-                        <ion-header-bar>
-                            <h1 class="title" style="color:#8BC34A" ng-init="kstwoHead">{{kstwoHead}}&nbsp;&nbsp;&nbsp;<i class="icon icon-right ion-ios-arrow-up"></i></h1>
-                        </ion-header-bar>
-                        <ion-content>
-                            <ion-list>
-                                <ion-item ng-repeat="kstwo in kstwojson">
-                                    {{kstwo.name}}
-                                </ion-item>
-                            </ion-list>
-                        </ion-content>
-                    </ion-side-menu>
-                </ion-side-menus>
-            </ion-view>
-        </ion-nav-view>
+    <ion-content scroll="true">
+        <ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>
+        <ion-list>
+            <ion-item collection-repeat="askitem in askitems">
+                {{askitem.name}}
+            </ion-item>
+        </ion-list>
     </ion-content>
-    <ion-footer-bar align-title="centent">
-        <div class="tabs tabs-icon-top">
-            <a class="tab-item" href="#">
-                <i class="icon ion-home"></i>
-                主页
-            </a>
-            <a class="tab-item" href="#">
-                <i class="icon ion-compass"></i>
-                发现
-            </a>
-            <a class="tab-item" href="#">
-                <i class="icon ion-person"></i>
-                我
-            </a>
-        </div>
-    </ion-footer-bar>
 </body>
 </html>

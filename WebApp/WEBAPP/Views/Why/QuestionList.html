@@ -2,7 +2,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title>健康十万个为什么</title>
+    <title>健康十万个为什么-最新回复</title>
     <link href="/Content/css/ionic.min.css" rel="stylesheet" />
     <link href="/Content/css/webapp.css" rel="stylesheet" />
     <script src="/Content/js/ionic.bundle.min.js"></script>
@@ -47,58 +47,44 @@
             <h1 class="title" style="color:#8BC34A">神经内科&nbsp;&nbsp;&nbsp;<i class="icon icon-right ion-ios-arrow-up"></i></h1>
         </div>
         <div class="bar  item-input-inset" style="background-color: #eeeeee;">
-            <div class="button-bar">
+            <div class="button-bar  button-small">
                 <a class="button whybuttonleft whybuttonselect">最新回复</a>
                 <a class="button whybuttonright whybuttonNoselect">专家解答</a>
             </div>
         </div>
         <ion-nav-view>
             <ion-view>
-                <ion-content style="background-color:#eeeeee">
-                    <div class="card" ng-repeat="q in questionlistjson">
-                        <div class="item item-text-wrap">
-                            <a class="item item-avatar-right itemQuestion" href="#">
-                                <img src="/img/img202_icon_headportrait.png">
-                                <div class="QuestionBubble-right">
-                                    <p>
-                                        {{q.question}}
-                                    </p>
-                                    <em></em>
-                                </div>
-                            </a>
-                            <h6 class="title QuestionDoctor">{{q.Doctor}}&nbsp;&nbsp;{{q.Level}} <span>{{q.RecoveryTime}}小时前</span></h6>
-                            <a class="item item-avatar-left itemQuestion" href="#">
-                                <img src="/img/img202_icon_headportrait.png">
-                                <div class="QuestionBubble-left">
-                                    <p>{{q.answer}}</p>
-                                    <em></em><span></span>
-                                </div>
-                            </a>
+                <ion-content style="background-color:#eeeeee" scrollbar-y="false">
+                    <div class="card-Interlayer " collection-repeat="q in questionlistjson">
+                        <div class="card card-margin">
+                            <div class="item item-text-wrap">
+                                <a class="item item-avatar-right itemQuestion" href="#">
+                                    <img src="/img/img202_icon_headportrait.png">
+                                    <div class="QuestionBubble-right">
+                                        <p>
+                                            {{q.question}}
+                                        </p>
+                                        <em></em>
+                                    </div>
+                                </a>
+                                <h6 class="title QuestionDoctor">{{q.Doctor}}&nbsp;&nbsp;{{q.Level}} <span>{{q.RecoveryTime}}小时前</span></h6>
+                                <a class="item item-avatar-left itemQuestion" href="#">
+                                    <img src="/img/img202_icon_headportrait.png">
+                                    <div class="QuestionBubble-left">
+                                        <p>{{q.answer}}</p>
+                                        <em></em><span></span>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="card"></div>
-                    <div class="card"></div>
-                    <div class="card"></div>
-                    <div class="card"></div>
+                    <div class="card" style="height:150px;"></div>
                 </ion-content>
             </ion-view>
         </ion-nav-view>
     </ion-content>
-    <ion-footer-bar align-title="centent">
-        <div class="tabs tabs-icon-top">
-            <a class="tab-item" href="#">
-                <i class="icon ion-home"></i>
-                主页
-            </a>
-            <a class="tab-item" href="#">
-                <i class="icon ion-compass"></i>
-                发现
-            </a>
-            <a class="tab-item" href="#">
-                <i class="icon ion-person"></i>
-                我
-            </a>
-        </div>
-    </ion-footer-bar>
+    <div class="bar bar-footer bar-green opacity-footer">
+        <div class="title">我要提问</div>
+    </div>
 </body>
 </html>
