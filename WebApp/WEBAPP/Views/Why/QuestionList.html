@@ -54,6 +54,7 @@
         </div>
         <ion-nav-view>
             <ion-view>
+<<<<<<< HEAD
                 <ion-content style="background-color:#eeeeee" scrollbar-y="false">
                     <div class="card-Interlayer " collection-repeat="q in questionlistjson">
                         <div class="card card-margin">
@@ -76,6 +77,28 @@
                                     </div>
                                 </a>
                             </div>
+=======
+                <ion-content style="background-color:#eeeeee">
+                    <div class="card" ng-repeat="q in questionlistjson">
+                        <div class="item item-text-wrap">
+                            <a class="item item-avatar-right itemQuestion" href="#">
+                                <img src="/img/img202_icon_headportrait.png">
+                                <div class="QuestionBubble-right">
+                                    <p>
+                                        {{q.question}}
+                                    </p>
+                                    <em></em>
+                                </div>
+                            </a>
+                            <h6 class="title QuestionDoctor">{{q.Doctor}}&nbsp;&nbsp;{{q.Level}} <span>{{q.RecoveryTime}}小时前</span></h6>
+                            <a class="item item-avatar-left itemQuestion" href="#">
+                                <img src="/img/img202_icon_headportrait.png">
+                                <div class="QuestionBubble-left">
+                                    <p>{{q.answer}}</p>
+                                    <em></em><span></span>
+                                </div>
+                            </a>
+>>>>>>> a89b5defdca0c68cb4c458c9c808c6b1711ff65b
                         </div>
                     </div>
                     <div class="card" style="height:150px;"></div>
