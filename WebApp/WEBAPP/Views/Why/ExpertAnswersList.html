@@ -1,0 +1,82 @@
+﻿<html ng-app="ExpertAnswersListApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>健康十万个为什么-专家解答</title>
+    <link href="/Content/css/ionic.min.css" rel="stylesheet" />
+    <link href="/Content/css/webapp.css" rel="stylesheet" />
+    <script src="/Content/js/ionic.bundle.min.js"></script>
+    <script type="text/javascript">
+        var app = angular.module('ExpertAnswersListApp', ['ionic']);
+        app.controller("ListCtrl", function ($scope) {
+            var Doctor = "审兰阔";
+            var Level = "主任医师";
+            var Hospital = "广州红十字会医院";
+            var Introduction = "擅长疾病:善于内科疾病的诊断和疗长高血压、冠心病心绞痛和心肌梗死、心脏瓣膜病、周围血管病、先天性心脏病。";
+            var department = "心血管医学部";
+            var questionlist = {};
+            var dataquestion;
+            $scope.questionlistjson = [];
+            for (var i = 0; i < 10; i++) {
+                dataquestion = {
+                    Doctor: Doctor + i,
+                    Level: Level + i,
+                    Hospital: Hospital,
+                    Introduction: Introduction,
+                    department: department
+                };
+                $scope.questionlistjson[i] = dataquestion;
+            }
+        });
+    </script>
+</head>
+<body ng-controller="ListCtrl">
+    <ion-header-bar class="bar-green">
+        <button class="button icon ion-ios-arrow-left"></button>
+        <h1 class="title">健康十万个为什么</h1>
+    </ion-header-bar>
+    <ion-content scroll="false">
+        <div class="bar  bar-subheader-green item-input-inset">
+            <label class="item-input-wrapper">
+                <i class="icon ion-ios-search placeholder-icon"></i>
+                <input type="text" placeholder="搜索" />
+            </label>
+            <button class="button button-energized">确定</button>
+        </div>
+        <div class="bar  item-input-inset">
+            <h1 class="title" style="color:#8BC34A">神经内科&nbsp;&nbsp;&nbsp;<i class="icon icon-right ion-ios-arrow-up"></i></h1>
+        </div>
+        <div class="bar  item-input-inset" style="background-color: #eeeeee;">
+            <div class="button-bar  button-small">
+                <a class="button whybuttonleft whybuttonNoselect">最新回复</a>
+                <a class="button whybuttonright  whybuttonselect">专家解答</a>
+            </div>
+        </div>
+        <ion-nav-view>
+            <ion-view>
+                <ion-content style="background-color:#eeeeee" scrollbar-y="false">
+                    <div class="card-Interlayer" collection-repeat="q in questionlistjson">
+                        <div class="card card-margin">
+                            <div class="item item-text-wrap tabs-icon-top">
+                                <div class="item item-avatar-left itemQuestion">
+                                    <img src="/img/img202_icon_headportrait.png" />
+                                    <span>{{q.Doctor}}</span>
+                                    <h3>{{q.Level}}</h3>
+                                    <h3>{{q.Hospital}}</h3>
+                                    <h3>{{q.department}}</h3>
+                                    <br />
+                                    <p>{{q.Introduction}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card" style="height:150px;"></div>
+                </ion-content>
+            </ion-view>
+        </ion-nav-view>
+    </ion-content>
+    <div class="bar bar-footer bar-green opacity-footer">
+        <div class="title">我要提问</div>
+    </div>
+</body>
+</html>

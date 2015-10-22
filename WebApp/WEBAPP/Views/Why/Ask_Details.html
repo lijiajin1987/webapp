@@ -1,0 +1,40 @@
+﻿<html ng-app="Askapp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>健康十万个为什么-专家解答</title>
+    <link href="/Content/css/ionic.min.css" rel="stylesheet" />
+    <link href="/Content/css/webapp.css" rel="stylesheet" />
+    <script src="/Content/js/ionic.bundle.min.js"></script>
+    <title>健康十万个为什么-问题详情</title>
+    <script type="text/javascript">
+        var app = angular.module('Askapp', ['ionic']);
+        app.controller("AskCtrl", function ($scope) {
+            $scope.askitems = [];// [{ name: "3" }, { name: "2" }, { name: "1" }];
+            $scope.askitems = [{ "name": "3" }, { "name": "2" }, { "name": "1" }];
+            $scope.doRefresh = function () {
+                $scope.askitems = [{ name: "1" }, { name: "2" }, { name: "3" }];
+                $scope.$broadcast('scroll.refreshComplete');
+            };
+        });
+    </script>
+</head>
+<body ng-controller="AskCtrl" style="background-color:#eeeeee;">
+    <ion-header-bar class="bar-green">
+        <button class="button icon ion-ios-arrow-left"></button>
+        <h1 class="title">审兰阔</h1>
+    </ion-header-bar>
+    <div class="content has-header">
+        <div class="row item-avatar-left" style="background-color:#ffffff;">
+            <img class="askhead" src="/img/img202_icon_headportrait.png" />
+            <h5 style="color: #727272; font-size: 12px; "><b style="color: #212121;">审兰阔</b> &nbsp;&nbsp;主治医师</h5>
+            <h5 style="color: #727272; font-size: 12px; ">家庭医生在线合作医院</h5>
+            <h5 style="color: #727272; font-size: 12px; ">全科</h5>
+        </div>
+        
+    </div>
+    <div class="bar bar-footer bar-green opacity-footer">
+        <div class="title">我要提问</div>
+    </div>
+</body>
+</html>
